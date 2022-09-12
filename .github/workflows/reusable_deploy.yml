@@ -154,7 +154,9 @@ jobs:
       - if: ${{ inputs.ambiente == 'develop'}}
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          role-to-assume: arn:aws:iam::${{secrets.DEV_ACCOUNT_ID}}:role/quickstart_deploy
+          role-to-assume: arn:aws:iam::${{secrets.DEV_AWS_ACCOUNT_ID}}:role/quickstart_deploy
+          role-session-name: quickstart_deploy
+          aws-region: ${{ inputs.region }}
         
       # Credenciales de producción
       - if: ${{ inputs.ambiente == 'production' }}
