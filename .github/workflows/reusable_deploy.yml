@@ -85,8 +85,9 @@ on:
         default: 'false'
 
 
-
-
+permissions:
+ id-token: write
+ 
 jobs:
 
   Deploy:
@@ -153,9 +154,7 @@ jobs:
       - if: ${{ inputs.ambiente == 'develop'}}
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key-id: ${{ secrets.DEV_AWS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.DEV_AWS_KEY_SECRET }}
-          aws-region: ${{inputs.region}}
+          role-to-assume: arn:aws:iam::${{secrets.DEV_ACCOUNT_ID}}:role/quickstart_deploy
         
       # Credenciales de producción
       - if: ${{ inputs.ambiente == 'production' }}
