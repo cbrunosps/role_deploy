@@ -15,7 +15,7 @@ jobs:
 
 
   DevDeploy:
-    uses: cbrunosps/role_deploy/.github/workflows/reusable_deploy.yml@main
+    uses: cbrunosps/reusable_test/.github/workflows/reusable_deploy.yml@main
     with:
       ambiente: "develop"
       region: us-east-1

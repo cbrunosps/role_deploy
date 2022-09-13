@@ -25,14 +25,14 @@ jobs:
 
   Hotfix:
     permissions: write-all
-    uses: cbrunosps/role_deploy/.github/workflows/reusable_create_fix.yml@main
+    uses: cbrunosps/reusable_test/.github/workflows/reusable_create_fix.yml@main
     with:
       ref: ${{github.event.inputs.version}}
       fix: ${{github.event.inputs.version_fix}}
 
   DevDeploy:
     needs: Hotfix
-    uses: cbrunosps/role_deploy/.github/workflows/reusable_deploy.yml@main
+    uses: cbrunosps/reusable_test/.github/workflows/reusable_deploy.yml@main
     with:
       ambiente: "develop"
       region: us-east-1
