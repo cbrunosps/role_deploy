@@ -1,6 +1,6 @@
 {"Actualizaciones": [{
   "ID": {
-    "S": "int-afore-sec-custom-mtm-chklst"
+    "S": "sps-demo"
   },
   "API": {
     "L": []
