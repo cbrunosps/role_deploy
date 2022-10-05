@@ -45,6 +45,11 @@ Resources:
             RestApiId: !Ref ApiGatewayApi
             Path: /hello
             Method: get
+            Cors:
+              AllowMethods: "'POST, GET'"
+              AllowOrigin: "'*'"
+              MaxAge: "'600'"
+              AllowCredentials: true            
       Environment:
         Variables:
           TABLA_EJEMPLO: !Sub sps-tabla-ejemplo-${DBEnvName}      
